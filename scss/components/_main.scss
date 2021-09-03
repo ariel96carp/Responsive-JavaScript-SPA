@@ -1,7 +1,7 @@
 main{
     --details-height: 7rem;
     --form-height: 2rem;
-    --container-height: 0;
+    --screen-height: 0;
 }
 
 .chat-details{
@@ -27,17 +27,20 @@ main{
     flex-direction: column;
     gap: .5rem;
     height: calc(100% - (var(--details-height) + var(--form-height)));
-    max-height: calc(var(--container-height) - (var(--details-height) + var(--form-height) + (var(--container-padding) * 4)));
+    min-height: px-to-rem(200px);
+    max-height: calc((var(--screen-height) - var(--aside-margin)) - (var(--details-height) + var(--form-height)));
     overflow-y: scroll;
 }
 
 .message{
+    --image-width: 4em;
+    --message-gap: 1rem;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    gap: var(--message-gap);
 
     img{
-        width: 4em;
+        width: var(--image-width);
     }
 
     p{
@@ -47,10 +50,13 @@ main{
 
 .message-info{
     align-self: flex-start;
+    max-width: calc(100% - (var(--image-width) + var(--message-gap)));
 
-    .user{
-        margin-bottom: .75rem;
+    .user-info{
+        margin-bottom: .7rem;
         color: map-get($colors, primary-color);
+        display: flex;
+        gap: .2rem;
     }
 
     .user-time{

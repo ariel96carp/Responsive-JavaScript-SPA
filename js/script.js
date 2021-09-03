@@ -13,13 +13,13 @@ addEventListener("DOMContentLoaded", () => {
     const mainSection = document.getElementById("main")
     if (mainSection)
     {
-        let screenHeight = screen.height
-        mainSection.style.setProperty("--container-height", `${screenHeight}px`)
+        let screenHeight = window.innerHeight
+        mainSection.style.setProperty("--screen-height", `${screenHeight}px`)
         addEventListener("resize", () => {
-            if (screen.height != screenHeight)
+            if (window.innerHeight != screenHeight)
             {
-                screenHeight = screen.height
-                mainSection.style.setProperty("--container-height", `${screenHeight}px`)
+                screenHeight = window.innerHeight
+                mainSection.style.setProperty("--screen-height", `${screenHeight}px`)
             }
         })
     }
@@ -34,11 +34,44 @@ addEventListener("DOMContentLoaded", () => {
             }
         }
     }
-    
     if (mediaBp)
     {
         addEventListener("resize", () => {
             hideModal(mediaBp)
+        })
+    }
+
+    /* DEPENDIENDO DE SI SE CUMPLE O NO EL BREAKPOINT ALMACENADO EN LA VARIABLE "wrapperBp", REUBICO EL CONTENEDOR "wrapper" DENTRO DE
+    LA ESTRUCTURA HTML. */
+    const wrapperBp = matchMedia("(min-width: 750px)")
+    const asideSection = document.getElementById("aside")
+    const messagesContainer = document.getElementById("messages-container")
+    const chatDetails = document.getElementById("chat-details")
+    const bodyContainer = document.getElementById("body")
+    const toggleWrapper = (breakpoint) => {
+        if (breakpoint.matches)
+        {
+            if (asideSection.classList.contains("wrapper"))
+            {
+                asideSection.classList.toggle("wrapper")
+                messagesContainer.classList.toggle("wrapper")
+                chatDetails.classList.toggle("wrapper")
+                bodyContainer.classList.toggle("wrapper")
+            }
+        }
+        else if (asideSection.classList.contains("wrapper") == false)
+        {
+            asideSection.classList.toggle("wrapper")
+            messagesContainer.classList.toggle("wrapper")
+            chatDetails.classList.toggle("wrapper")
+            bodyContainer.classList.toggle("wrapper")
+        }
+    }
+    if (wrapperBp && asideSection && messagesContainer && chatDetails && bodyContainer)
+    {
+        toggleWrapper(wrapperBp)
+        addEventListener("resize", () => {
+            toggleWrapper(wrapperBp)
         })
     }
 })

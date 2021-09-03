@@ -301,7 +301,7 @@ button, .button {
 main {
   --details-height: 7rem;
   --form-height: 2rem;
-  --container-height: 0;
+  --screen-height: 0;
 }
 
 .chat-details {
@@ -325,18 +325,21 @@ main {
   flex-direction: column;
   gap: .5rem;
   height: calc(100% - (var(--details-height) + var(--form-height)));
-  max-height: calc(var(--container-height) - (var(--details-height) + var(--form-height) + (var(--container-padding) * 4)));
+  min-height: 12.5rem;
+  max-height: calc((var(--screen-height) - var(--aside-margin)) - (var(--details-height) + var(--form-height)));
   overflow-y: scroll;
 }
 
 .message {
+  --image-width: 4em;
+  --message-gap: 1rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: var(--message-gap);
 }
 
 .message img {
-  width: 4em;
+  width: var(--image-width);
 }
 
 .message p {
@@ -345,11 +348,14 @@ main {
 
 .message-info {
   align-self: flex-start;
+  max-width: calc(100% - (var(--image-width) + var(--message-gap)));
 }
 
-.message-info .user {
-  margin-bottom: .75rem;
+.message-info .user-info {
+  margin-bottom: .7rem;
   color: #666666;
+  display: flex;
+  gap: .2rem;
 }
 
 .message-info .user-time {
@@ -380,7 +386,7 @@ aside .main-menu-toggle {
   cursor: pointer;
 }
 
-@media screen and (min-width: 64rem) {
+@media screen and (min-width: 46.875rem) {
   aside .main-menu-toggle {
     display: none;
   }
@@ -394,13 +400,13 @@ aside .users-container {
   height: calc(100vh - var(--aside-margin));
   width: 70vw;
   padding: 0 1em 1em;
-  transition: right 0.5s;
   overflow-y: scroll;
   display: flex;
   flex-direction: column;
 }
 
 aside .users-container.show {
+  transition: right 0.5s;
   right: 0;
 }
 

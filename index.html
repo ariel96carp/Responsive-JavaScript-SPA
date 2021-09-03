@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <title>Document</title>
+    <title>Responsive SPA</title>
 </head>
 <body>
     <header></header>
-    <div class="body">
+    <div class="body" id="body">
         <aside>
-            <div class="wrapper aside">
+            <div class="aside wrapper" id="aside">
                 <img src="img/5b557c57-8969-45ca-b880-a05441ca353b.png" alt="Logo de EDteam">
                 <div class="main-menu-toggle" id="main-menu-toggle"></div>
                 <a href="#" class="button">Cerrar sesión</a>
@@ -72,21 +72,31 @@
             </div>
         </aside>
         <main id="main">
-            <div class="chat-details">
-                <div class="wrapper">
-                    <div class="chat-title">
+            <div class="chat-details wrapper" id="chat-details">
+                <div class="chat-title">
                         <h1>Canal público</h1>
-                    </div>
-                    <div class="chat-subtitle">
-                        <p>Sala general de comunicación</p>
-                    </div>
+                </div>
+                <div class="chat-subtitle">
+                    <p>Sala general de comunicación</p>
                 </div>
             </div>
-            <div class="messages-container wrapper">
+            <div class="messages-container wrapper" id="messages-container">
                 <div class="message">
                     <img src="img/perfil.svg" alt="Avatar de usuario">
                     <div class="message-info">
-                        <div class="user">
+                        <div class="user-info">
+                            <p class="user-name">Dante Carrasco</p>
+                            <p class="user-time">17:58</p>
+                        </div>
+                        <div class="content">
+                            <p>¡Hola! ¿Cómo estás?sdddddddddddddasasdsad</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="message">
+                    <img src="img/perfil.svg" alt="Avatar de usuario">
+                    <div class="message-info">
+                        <div class="user-info">
                             <p class="user-name">Dante Carrasco</p>
                             <p class="user-time">17:58</p>
                         </div>
@@ -98,7 +108,7 @@
                 <div class="message">
                     <img src="img/perfil.svg" alt="Avatar de usuario">
                     <div class="message-info">
-                        <div class="user">
+                        <div class="user-info">
                             <p class="user-name">Dante Carrasco</p>
                             <p class="user-time">17:58</p>
                         </div>
@@ -106,79 +116,7 @@
                             <p>¡Hola! ¿Cómo estás?</p>
                         </div>
                     </div>
-                </div>
-                <div class="message">
-                    <img src="img/perfil.svg" alt="Avatar de usuario">
-                    <div class="message-info">
-                        <div class="user">
-                            <p class="user-name">Dante Carrasco</p>
-                            <p class="user-time">17:58</p>
-                        </div>
-                        <div class="content">
-                            <p>¡Hola! ¿Cómo estás?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="message">
-                    <img src="img/perfil.svg" alt="Avatar de usuario">
-                    <div class="message-info">
-                        <div class="user">
-                            <p class="user-name">Dante Carrasco</p>
-                            <p class="user-time">17:58</p>
-                        </div>
-                        <div class="content">
-                            <p>¡Hola! ¿Cómo estás?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="message">
-                    <img src="img/perfil.svg" alt="Avatar de usuario">
-                    <div class="message-info">
-                        <div class="user">
-                            <p class="user-name">Dante Carrasco</p>
-                            <p class="user-time">17:58</p>
-                        </div>
-                        <div class="content">
-                            <p>¡Hola! ¿Cómo estás?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="message">
-                    <img src="img/perfil.svg" alt="Avatar de usuario">
-                    <div class="message-info">
-                        <div class="user">
-                            <p class="user-name">Dante Carrasco</p>
-                            <p class="user-time">17:58</p>
-                        </div>
-                        <div class="content">
-                            <p>¡Hola! ¿Cómo estás?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="message">
-                    <img src="img/perfil.svg" alt="Avatar de usuario">
-                    <div class="message-info">
-                        <div class="user">
-                            <p class="user-name">Dante Carrasco</p>
-                            <p class="user-time">17:58</p>
-                        </div>
-                        <div class="content">
-                            <p>¡Hola! ¿Cómo estás?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="message">
-                    <img src="img/perfil.svg" alt="Avatar de usuario">
-                    <div class="message-info">
-                        <div class="user">
-                            <p class="user-name">Dante Carrasco</p>
-                            <p class="user-time">17:58</p>
-                        </div>
-                        <div class="content">
-                            <p>¡Hola! ¿Cómo estás?</p>
-                        </div>
-                    </div>
-                </div>     
+                </div>  
             </div>
             <form action="#" class="message-form">
                 <input type="text" class="message" name="" placeholder="Ingrese su mensaje">

@@ -11,7 +11,7 @@ aside{
         background: menu-toggle(primary-color);
         cursor: pointer;
     
-        @include media-quarie(large){
+        @include media-quarie(750px){
             display: none;
         }
     }
@@ -24,12 +24,12 @@ aside{
         height: calc(100vh - var(--aside-margin));
         width: 70vw;
         padding: 0 1em 1em;
-        transition: right 0.5s;
         overflow-y: scroll;
         display: flex;
         flex-direction: column;
 
         &.show{
+            transition: right 0.5s;
             right: 0;
         }
     }
