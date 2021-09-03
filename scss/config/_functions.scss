@@ -1,0 +1,23 @@
+// CONVERSOR DE UNIDADES
+@function px-to-rem ($value, $base: 16px){
+    @if type-of($value) == number and unit($value) == "px"{
+        @return $value / $base * 1rem;
+    }
+    @else{
+        @return null;
+    }
+}
+
+// CREADOR DEL MENU TOGGLE
+@function menu-toggle($color){
+    @if map-has-key($colors, $color){
+        $map-color: map-get($colors, $color);
+        @return linear-gradient($map-color 20%, transparent 20%, transparent 40%, $map-color 40%, $map-color 60%,
+        transparent 60%, transparent 80%, $map-color 80%);
+    }
+    @else{
+        @return linear-gradient($color 20%, transparent 20%, transparent 40%, $color 40%, $color 60%,
+        transparent 60%, transparent 80%, $color 80%);
+    }
+}
+

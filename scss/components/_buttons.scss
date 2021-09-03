@@ -1,0 +1,8 @@
+button,.button{
+    color: white;
+    background-color: map-get($colors, button-color);
+    display: inline-block;
+    border: none;
+    padding: 0.5em 0.75em;
+    border-radius: 3px;
+}

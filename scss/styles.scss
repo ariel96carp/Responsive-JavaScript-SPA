@@ -1,0 +1,20 @@
+@import "config/variables";
+@import "config/functions";
+@import "config/mixins";
+@import "layout/layout";
+@import "base/base";
+@import "components/buttons";
+@import "components/main";
+@import "components/aside";
+@import "components/modal";
+
+body{
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: min-content auto min-content;
+}
+
+.body{
+    display: grid;
+    grid-template-rows: var(--aside-margin) auto;
+}

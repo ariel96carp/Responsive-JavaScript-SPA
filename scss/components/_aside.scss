@@ -1,0 +1,63 @@
+aside{
+    background-color: map-get($colors, secondary-color);
+
+    img{
+        height: 2em;
+    }
+
+    .main-menu-toggle{
+        width: 2.2em;
+        height: 1.6em;
+        background: menu-toggle(primary-color);
+        cursor: pointer;
+    
+        @include media-quarie(large){
+            display: none;
+        }
+    }
+
+    .users-container{
+        background-color: map-get($colors, secondary-color);
+        position: fixed;
+        top: var(--aside-margin);
+        right: -80vw;
+        height: calc(100vh - var(--aside-margin));
+        width: 70vw;
+        padding: 0 1em 1em;
+        transition: right 0.5s;
+        overflow-y: scroll;
+        display: flex;
+        flex-direction: column;
+
+        &.show{
+            right: 0;
+        }
+    }
+}
+
+.users-container{
+    h2{
+        text-transform: uppercase;
+        border-top: 1px solid map-get($colors, primary-color);
+        border-bottom: 1px solid map-get($colors, primary-color);
+        padding: .75rem 0;
+        color: map-get($colors, primary-color);
+    }
+
+    .users{
+        flex-grow: 1;
+        overflow-y: scroll;
+    }
+}
+
+.user{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+
+    .user-status{
+        font-family: var(--italic-font);
+        color: map-get($colors, primary-color);
+    }
+}

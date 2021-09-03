@@ -1,0 +1,27 @@
+@mixin media-quarie($breakpoint){
+    @if map-has-key($breakpoints, $breakpoint){
+        @media screen and (min-width: px-to-rem(map-get($breakpoints, $breakpoint))){
+            @content;
+        }
+    }
+    @else if type-of($breakpoint) == number unit($breakpoint) == "px"{
+        @media screen and (min-width: px-to-rem($breakpoint)){
+            @content;
+        }
+    }
+    @else{
+        @error "EL VALOR INGRESADO NO CORRESPONDE a un VALOR VALIDO."
+    }
+};
+
+@mixin fluid-typography($min-width, $max-width, $min-font, $max-font){
+    font-size: #{$min-font};
+
+    @include media-quarie($min-width){
+        font-size: calc(#{$min-font} + (#{strip-unit($max-font - $min-font)}) * ((100vw - #{breakpoint-finder($min-width)}) / 60))
+    }
+
+    @include media-quarie($max-width){
+        font-size: #{$max-font};
+    }
+};

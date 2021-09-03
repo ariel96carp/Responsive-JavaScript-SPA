@@ -1,0 +1,20 @@
+.modal{
+    position: fixed;
+    top: var(--aside-margin);
+    left: 0;
+    width: 100vw;
+    height: calc(100vh - var(--aside-margin));
+    background-color: rgba(0, 0, 0, 0.5);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity .5s;
+
+    &.active{
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    @include media-quarie(large){
+        display: none;
+    }
+}
