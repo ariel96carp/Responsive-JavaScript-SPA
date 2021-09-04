@@ -17,4 +17,14 @@ body{
 .body{
     display: grid;
     grid-template-rows: var(--aside-margin) auto;
+    --column-height: 30%;
+
+    @include media-quarie(wrapper){
+        grid-template-rows: auto;
+        grid-template-columns: var(--column-height) auto;
+    }
+
+    @include media-quarie(large){
+        --column-height: 22.5%
+    }
 }

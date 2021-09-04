@@ -1,8 +1,35 @@
 aside{
+    --title-height: 5.5rem;
     background-color: map-get($colors, secondary-color);
 
+    .aside{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100%;
+
+        @include media-quarie(wrapper){
+            flex-direction: column;
+            justify-content: flex-start;
+            padding: .5em 1em;
+
+            .button{
+                order: 1;
+
+                @include media-quarie(wrapper){
+                    width: 100%;
+                }
+            }
+        }
+    }
+
     img{
-        height: 2em;
+        height: 2rem;
+
+        @include media-quarie(wrapper){
+            height: 3rem;
+            margin-bottom: .5rem;
+        }
     }
 
     .main-menu-toggle{
@@ -11,7 +38,7 @@ aside{
         background: menu-toggle(primary-color);
         cursor: pointer;
     
-        @include media-quarie(750px){
+        @include media-quarie(wrapper){
             display: none;
         }
     }
@@ -24,13 +51,24 @@ aside{
         height: calc(100vh - var(--aside-margin));
         width: 70vw;
         padding: 0 1em 1em;
-        overflow-y: scroll;
         display: flex;
         flex-direction: column;
 
         &.show{
             transition: right 0.5s;
             right: 0;
+        }
+
+        @include media-quarie(wrapper){
+            display: block;
+            position: static;
+            width: auto;
+            height: 100%;
+            padding: 0 0 1em;
+        }
+
+        @include media-quarie(large){
+            padding: 0 0 .5em;
         }
     }
 }
@@ -40,13 +78,19 @@ aside{
         text-transform: uppercase;
         border-top: 1px solid map-get($colors, primary-color);
         border-bottom: 1px solid map-get($colors, primary-color);
-        padding: .75rem 0;
+        padding: .5em 0;
         color: map-get($colors, primary-color);
+        height: var(--title-height);
     }
 
     .users{
         flex-grow: 1;
         overflow-y: scroll;
+
+        @include media-quarie(wrapper){
+            height: calc(100% - var(--title-height));
+            max-height: calc(100% - var(--title-height));
+        }
     }
 }
 

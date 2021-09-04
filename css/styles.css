@@ -2,6 +2,10 @@
   --aside-margin: 4rem;
 }
 
+:root {
+  --screen-height: 0;
+}
+
 @font-face {
   font-family: "body-font";
   font-style: normal;
@@ -46,13 +50,6 @@
   width: calc(100% - calc(var(--margin) * 2));
   min-width: 20rem;
   max-width: 75rem;
-}
-
-.wrapper.aside {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 100%;
 }
 
 @media screen and (min-width: 64rem) {
@@ -301,7 +298,6 @@ button, .button {
 main {
   --details-height: 7rem;
   --form-height: 2rem;
-  --screen-height: 0;
 }
 
 .chat-details {
@@ -314,20 +310,33 @@ main {
   color: #666666;
 }
 
+@media screen and (min-width: 46.875rem) {
+  .chat-details {
+    padding: 1em 1em;
+  }
+}
+
 .chat-subtitle p {
   margin-bottom: 0;
+  margin-top: .5em;
 }
 
 .messages-container {
-  --container-padding: 1em;
-  padding: var(--container-padding) 0;
+  padding: 1em 0;
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: .75rem;
   height: calc(100% - (var(--details-height) + var(--form-height)));
   min-height: 12.5rem;
   max-height: calc((var(--screen-height) - var(--aside-margin)) - (var(--details-height) + var(--form-height)));
   overflow-y: scroll;
+}
+
+@media screen and (min-width: 46.875rem) {
+  .messages-container {
+    max-height: calc(var(--screen-height) - (var(--details-height) + var(--form-height)));
+    padding: 1em 1em;
+  }
 }
 
 .message {
@@ -352,7 +361,7 @@ main {
 }
 
 .message-info .user-info {
-  margin-bottom: .7rem;
+  margin-bottom: .25rem;
   color: #666666;
   display: flex;
   gap: .2rem;
@@ -372,11 +381,43 @@ main {
 }
 
 aside {
+  --title-height: 5.5rem;
   background-color: #1f3a75;
 }
 
+aside .aside {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+@media screen and (min-width: 46.875rem) {
+  aside .aside {
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: .5em 1em;
+  }
+  aside .aside .button {
+    order: 1;
+  }
+}
+
+@media screen and (min-width: 46.875rem) and (min-width: 46.875rem) {
+  aside .aside .button {
+    width: 100%;
+  }
+}
+
 aside img {
-  height: 2em;
+  height: 2rem;
+}
+
+@media screen and (min-width: 46.875rem) {
+  aside img {
+    height: 3rem;
+    margin-bottom: .5rem;
+  }
 }
 
 aside .main-menu-toggle {
@@ -400,7 +441,6 @@ aside .users-container {
   height: calc(100vh - var(--aside-margin));
   width: 70vw;
   padding: 0 1em 1em;
-  overflow-y: scroll;
   display: flex;
   flex-direction: column;
 }
@@ -410,17 +450,41 @@ aside .users-container.show {
   right: 0;
 }
 
+@media screen and (min-width: 46.875rem) {
+  aside .users-container {
+    display: block;
+    position: static;
+    width: auto;
+    height: 100%;
+    padding: 0 0 1em;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  aside .users-container {
+    padding: 0 0 .5em;
+  }
+}
+
 .users-container h2 {
   text-transform: uppercase;
   border-top: 1px solid #666666;
   border-bottom: 1px solid #666666;
-  padding: .75rem 0;
+  padding: .5em 0;
   color: #666666;
+  height: var(--title-height);
 }
 
 .users-container .users {
   flex-grow: 1;
   overflow-y: scroll;
+}
+
+@media screen and (min-width: 46.875rem) {
+  .users-container .users {
+    height: calc(100% - var(--title-height));
+    max-height: calc(100% - var(--title-height));
+  }
 }
 
 .user {
@@ -467,6 +531,21 @@ body {
 .body {
   display: grid;
   grid-template-rows: var(--aside-margin) auto;
+  --column-height: 30%;
+}
+
+@media screen and (min-width: 46.875rem) {
+  .body {
+    grid-template-rows: auto;
+    grid-template-columns: var(--column-height) auto;
+  }
+}
+
+@media screen and (min-width: 64rem) {
+  .body {
+    --column-height: 22.5%
+    ;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

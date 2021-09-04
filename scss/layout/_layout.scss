@@ -6,13 +6,6 @@
     min-width: px-to-rem($min-wrapper-width);
     max-width: px-to-rem($max-wrapper-width);
 
-    &.aside{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        height: 100%;
-    }
-
     @include media-quarie(large){
         margin: 0 auto;
         width: 100%;

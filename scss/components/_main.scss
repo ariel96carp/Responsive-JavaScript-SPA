@@ -1,7 +1,6 @@
 main{
     --details-height: 7rem;
     --form-height: 2rem;
-    --screen-height: 0;
 }
 
 .chat-details{
@@ -12,24 +11,33 @@ main{
     .chat-subtitle{
         color: map-get($colors, primary-color);
     }
+
+    @include media-quarie(wrapper){
+        padding: 1em 1em;
+    }
 }
 
 .chat-subtitle{
     p{
         margin-bottom: 0;
+        margin-top: .5em;
     }
 }
 
 .messages-container{
-    --container-padding: 1em;
-    padding: var(--container-padding) 0;
+    padding: 1em 0;
     display: flex;
     flex-direction: column;
-    gap: .5rem;
+    gap: .75rem;
     height: calc(100% - (var(--details-height) + var(--form-height)));
     min-height: px-to-rem(200px);
     max-height: calc((var(--screen-height) - var(--aside-margin)) - (var(--details-height) + var(--form-height)));
     overflow-y: scroll;
+
+    @include media-quarie(wrapper){
+        max-height: calc(var(--screen-height) - (var(--details-height) + var(--form-height)));
+        padding: 1em 1em;
+    }
 }
 
 .message{
@@ -53,7 +61,7 @@ main{
     max-width: calc(100% - (var(--image-width) + var(--message-gap)));
 
     .user-info{
-        margin-bottom: .7rem;
+        margin-bottom: .25rem;
         color: map-get($colors, primary-color);
         display: flex;
         gap: .2rem;

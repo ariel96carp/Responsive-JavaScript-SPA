@@ -3,6 +3,11 @@
     --aside-margin: 4rem;
 }
 
+// TAMAÑO DE LA PANTALLA DEL DISPOSITIVO
+:root{
+    --screen-height: 0;
+}
+
 // MEDIDAS DEL CONTENEDOR "WRAPPER"
 $min-wrapper-width : 320px;
 $max-wrapper-width : 1200px;
@@ -52,7 +57,8 @@ $breakpoints:(
     small: 320px,
     medium: 640px,
     large: 1024px,
-    xlarge: 1440px
+    xlarge: 1440px,
+    wrapper: 750px
 );
 
 // PALETA DE COLORES 

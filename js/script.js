@@ -10,16 +10,16 @@ addEventListener("DOMContentLoaded", () => {
         })
     }
 
-    const mainSection = document.getElementById("main")
-    if (mainSection)
+    const root = document.documentElement
+    if (root)
     {
         let screenHeight = window.innerHeight
-        mainSection.style.setProperty("--screen-height", `${screenHeight}px`)
+        root.style.setProperty("--screen-height", `${screenHeight}px`)
         addEventListener("resize", () => {
             if (window.innerHeight != screenHeight)
             {
                 screenHeight = window.innerHeight
-                mainSection.style.setProperty("--screen-height", `${screenHeight}px`)
+                root.style.setProperty("--screen-height", `${screenHeight}px`)
             }
         })
     }
