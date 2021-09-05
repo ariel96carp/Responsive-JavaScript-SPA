@@ -12,16 +12,25 @@ body{
     min-height: 100vh;
     display: grid;
     grid-template-rows: min-content auto min-content;
+
+    &.overflow{
+        overflow-y: hidden;
+    }
 }
 
+// ESTILOS DEL CHAT
 .body{
     display: grid;
     grid-template-rows: var(--aside-margin) auto;
-    --column-height: 30%;
+    --column-height: 35%;
 
     @include media-quarie(wrapper){
         grid-template-rows: auto;
         grid-template-columns: var(--column-height) auto;
+    }
+
+    @include media-quarie(800px){
+        --column-height: 30%;
     }
 
     @include media-quarie(large){

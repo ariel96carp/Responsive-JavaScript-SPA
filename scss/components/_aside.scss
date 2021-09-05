@@ -1,5 +1,6 @@
+// ESTILOS DEL CHAT
 aside{
-    --title-height: 5.5rem;
+    --title-height: 3.5rem;
     background-color: map-get($colors, secondary-color);
 
     .aside{
@@ -8,27 +9,40 @@ aside{
         align-items: center;
         height: 100%;
 
+        .button{
+            background-color: map-get($colors, primary-color);
+
+            @include media-quarie(wrapper){
+                order: 1;
+                width: 100%;
+            }
+        }
+
         @include media-quarie(wrapper){
             flex-direction: column;
             justify-content: flex-start;
             padding: .5em 1em;
-
-            .button{
-                order: 1;
-
-                @include media-quarie(wrapper){
-                    width: 100%;
-                }
-            }
         }
     }
 
+    @include media-quarie(wrapper){
+        --title-height: 4rem;
+    }
+
     img{
-        height: 2rem;
+        height: 1.6rem;
+
+        @include media-quarie(360px){
+            height: 2rem;
+        }
 
         @include media-quarie(wrapper){
             height: 3rem;
             margin-bottom: .5rem;
+        }
+
+        @include media-quarie(large){
+            margin-bottom: 1rem;
         }
     }
 
@@ -64,17 +78,17 @@ aside{
             position: static;
             width: auto;
             height: 100%;
-            padding: 0 0 1em;
+            padding: 0 0 .5em;
         }
 
         @include media-quarie(large){
-            padding: 0 0 .5em;
+            padding: 0 0 1em;
         }
     }
 }
 
 .users-container{
-    h2{
+    h3{
         text-transform: uppercase;
         border-top: 1px solid map-get($colors, primary-color);
         border-bottom: 1px solid map-get($colors, primary-color);
@@ -85,10 +99,11 @@ aside{
 
     .users{
         flex-grow: 1;
-        overflow-y: scroll;
+        overflow-y: auto;
 
         @include media-quarie(wrapper){
             height: calc(100% - var(--title-height));
+            min-height: px-to-rem(200px);
             max-height: calc(100% - var(--title-height));
         }
     }
@@ -103,5 +118,11 @@ aside{
     .user-status{
         font-family: var(--italic-font);
         color: map-get($colors, primary-color);
+    }
+
+    @include media-quarie(large){
+        p{
+            margin: .75em 0;
+        }
     }
 }

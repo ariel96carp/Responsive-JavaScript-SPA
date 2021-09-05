@@ -3,7 +3,6 @@
     --margin: 1rem;
     margin: 0 var(--margin);
     width: calc(100% - calc(var(--margin) * 2));
-    min-width: px-to-rem($min-wrapper-width);
     max-width: px-to-rem($max-wrapper-width);
 
     @include media-quarie(large){
@@ -48,5 +47,8 @@
 
 // CENTRAR CONTENIDO
 .center-content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }

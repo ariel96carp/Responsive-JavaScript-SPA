@@ -1,15 +1,30 @@
 addEventListener("DOMContentLoaded", () => {
+    // BOTON CON EL QUE EN PANTALLAS CHICAS, SE VISUALIZAN LOS USUARIOS CONECTADOS.
     const toggleButton = document.getElementById("main-menu-toggle")
     const usersContainer = document.getElementById("users-container")
     const modalContainer = document.getElementById("modal")
-    if (toggleButton && usersContainer)
+    if (toggleButton && usersContainer && modalContainer)
     {
         toggleButton.addEventListener("click", () => {
             usersContainer.classList.toggle("show")
             modalContainer.classList.toggle("active")
+            if (document.body.classList.contains("overflow") == false)
+            {
+                document.body.classList.toggle("overflow")
+            }
+            else
+            {
+                document.body.removeAttribute("class")
+            }
+            if (document.body.classList.contains("overflow"))
+            {
+                window.scrollTo(0,0)
+            }
         })
     }
 
+    /* CADA VEZ QUE SE REDIMENSIONE LA PANTALLA DEL DISPOSITIVO; Y EN CASO DE QUE EL ANCHO SEA DISTINTO AL ULTIMO ANCHO 
+    ALMACENADO, SE MODIFICARA LA VARIABLE "screenHeight. */
     const root = document.documentElement
     if (root)
     {
@@ -24,26 +39,9 @@ addEventListener("DOMContentLoaded", () => {
         })
     }
 
-    const mediaBp = matchMedia("(min-width: 1024px)")
-    const hideModal = (breakpoint) => {
-        if (breakpoint.matches)
-        {
-            if (modalContainer.classList.contains("active"))
-            {
-                modalContainer.classList.toggle("active")
-            }
-        }
-    }
-    if (mediaBp)
-    {
-        addEventListener("resize", () => {
-            hideModal(mediaBp)
-        })
-    }
-
     /* DEPENDIENDO DE SI SE CUMPLE O NO EL BREAKPOINT ALMACENADO EN LA VARIABLE "wrapperBp", REUBICO EL CONTENEDOR "wrapper" DENTRO DE
     LA ESTRUCTURA HTML. */
-    const wrapperBp = matchMedia("(min-width: 750px)")
+    const wrapperBp = matchMedia("(min-width: 700px)")
     const asideSection = document.getElementById("aside")
     const messagesContainer = document.getElementById("messages-container")
     const chatDetails = document.getElementById("chat-details")
@@ -74,4 +72,26 @@ addEventListener("DOMContentLoaded", () => {
             toggleWrapper(wrapperBp)
         })
     }
+
+    /* DE CUMPLIRSE EL BREAKPOINT INDICADO; Y LOS ELEMENTOS CORRESPONDIENTES A LAS VARIABLES "modalContainer", "usersContainer" Y 
+    "bodyElement", CONTENER LAS CLASES "active", "show" Y "overflow" RESPECTIVAMENTE. ESTAS SE QUITARAN. */
+    const bodyElement = document.querySelector("body")
+    const hideUsers = (breakpoint) => {
+        if (breakpoint.matches)
+        {
+            if (modalContainer.classList.contains("active"))
+            {
+                modalContainer.classList.remove("active")
+                usersContainer.classList.remove("show")
+                bodyElement.removeAttribute("class")
+            }
+        }
+    }
+    if (wrapperBp && modalContainer && usersContainer && bodyElement)
+    {
+        addEventListener("resize", () => {
+            hideUsers(wrapperBp)
+        })
+    }
 })
+

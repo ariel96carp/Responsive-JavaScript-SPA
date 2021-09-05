@@ -15,13 +15,5 @@
 };
 
 @mixin fluid-typography($min-width, $max-width, $min-font, $max-font){
-    font-size: #{$min-font};
-
-    @include media-quarie($min-width){
-        font-size: calc(#{$min-font} + (#{strip-unit($max-font - $min-font)}) * ((100vw - #{breakpoint-finder($min-width)}) / 60))
-    }
-
-    @include media-quarie($max-width){
-        font-size: #{$max-font};
-    }
+    font-size: calc(#{px-to-rem($min-font)} + (#{strip-unit(px-to-rem($max-font) - px-to-rem($min-font))}) * ((100vw - #{breakpoint-finder($min-width)}) / (#{strip-unit(breakpoint-finder($max-width) - breakpoint-finder($min-width))})));
 };

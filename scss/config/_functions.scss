@@ -21,3 +21,26 @@
     }
 }
 
+@function breakpoint-finder($breakpoint){
+    @if map-has-key($breakpoints, $breakpoint){
+        @return px-to-rem(map-get($breakpoints, $breakpoint));
+    }
+    @else if type-of($breakpoint) == number and unit($breakpoint) == "px"{
+        @return px-to-rem($breakpoint);
+    }
+    @else{
+        @return null;
+    }
+}
+
+// ELIMINA UNIDADES
+@function strip-unit($number) {
+    @if type-of($number) == number and not unitless($number) {
+        @return $number / ($number * 0 + 1);
+    }
+    @else
+    {
+        @return null;
+    }
+}
+
