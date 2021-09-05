@@ -3,7 +3,7 @@ aside{
     --title-height: 3.5rem;
     background-color: map-get($colors, secondary-color);
 
-    .aside{
+    .aside-chat{
         display: flex;
         justify-content: space-between;
         align-items: center;

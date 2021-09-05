@@ -54,10 +54,11 @@ $max-wrapper-width : 1200px;
 // PUNTOS DE QUIEBRE
 $breakpoints:(
     small: 320px,
+    login: 500px,
     medium: 640px,
+    wrapper: 700px,
     large: 1024px,
-    xlarge: 1440px,
-    wrapper: 700px
+    xlarge: 1440px
 );
 
 // PALETA DE COLORES 

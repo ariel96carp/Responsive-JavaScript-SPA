@@ -6,6 +6,8 @@
 @import "components/buttons";
 @import "components/main";
 @import "components/aside";
+@import "components/form";
+@import "components/footer";
 @import "components/modal";
 
 body{
@@ -13,13 +15,14 @@ body{
     display: grid;
     grid-template-rows: min-content auto min-content;
 
+    // ESTILOS DEL CHAT
     &.overflow{
         overflow-y: hidden;
     }
 }
 
 // ESTILOS DEL CHAT
-.body{
+.body-chat{
     display: grid;
     grid-template-rows: var(--aside-margin) auto;
     --column-height: 35%;
@@ -33,7 +36,16 @@ body{
         --column-height: 30%;
     }
 
+    @include media-quarie(900px){
+        --column-height: 25%;
+    }
+
     @include media-quarie(large){
         --column-height: 22.5%
     }
+}
+
+// ESTILOS DEL LOGIN
+.body-login{
+    background-color: map-get($colors, secondary-color);
 }

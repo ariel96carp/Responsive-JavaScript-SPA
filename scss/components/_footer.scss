@@ -1,0 +1,41 @@
+// ESTILOS DEL LOGIN
+.footer-login{
+    --footer-padding: .5em 0;
+    --media-image: 2em;
+    background-color: map-get($colors, primary-color);
+    padding: var(--footer-padding);
+
+    .wrapper{
+        --fotter-space: space-around;
+        display: flex;
+        align-items: center;
+        justify-content: var(--fotter-space);
+        flex-wrap: wrap;
+        gap: .5em;
+
+        @include media-quarie(520px){
+            --fotter-space: space-between;
+        }
+    }
+
+    img{
+        height: var(--media-image);
+
+        @include media-quarie(large){
+            --media-image: 2.25rem;
+        }
+    }
+
+    .media-container{
+        display: flex;
+        gap: .5em;
+    }
+
+    .footer-title{
+        margin: 0;
+    }
+
+    @include media-quarie(login){
+        --footer-padding: 1em 0;
+    }
+}

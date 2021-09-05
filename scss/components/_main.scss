@@ -1,5 +1,5 @@
 // ESTILOS DEL CHAT
-main{
+.main-chat{
     --details-height: 5rem;
     --form-height: 2rem;
 
@@ -88,11 +88,46 @@ main{
     }
 }
 
-.message-form{
+// ESTILOS DEL LOGIN
+.main-login{
     display: flex;
-    height: var(--form-height);
+    justify-content: center;
+    padding-top: 1em;
+    min-height: px-to-rem(400px);
 
-    .message{
-        flex-grow: 1;
+    @include media-quarie(login){
+        align-items: center;
+    }
+
+    @media screen and (max-height: px-to-rem(400px)){
+        padding-bottom: 1em;
     }
 }
+
+.login-container{
+    img{
+        height: 2.75rem;
+        margin-bottom: 2em;
+
+        @include media-quarie(360px){
+            height: 3rem;
+        }
+
+        @include media-quarie(login){
+            margin-bottom: 3.5em;
+            height: 4rem;
+        }
+    }
+
+    @include media-quarie(login){
+        border: 1px solid map-get($colors, primary-color);
+        height: 70%;
+        padding: 1em 1em 0;
+        border-radius: 10px;
+    }
+
+    @media screen and (max-height: px-to-rem(400px)){
+        height: 100%;
+    }
+}
+

@@ -1,4 +1,10 @@
 addEventListener("DOMContentLoaded", () => {
+    
+
+
+
+    // CODIGO DEL CHAT
+
     // BOTON CON EL QUE EN PANTALLAS CHICAS, SE VISUALIZAN LOS USUARIOS CONECTADOS.
     const toggleButton = document.getElementById("main-menu-toggle")
     const usersContainer = document.getElementById("users-container")
@@ -42,10 +48,10 @@ addEventListener("DOMContentLoaded", () => {
     /* DEPENDIENDO DE SI SE CUMPLE O NO EL BREAKPOINT ALMACENADO EN LA VARIABLE "wrapperBp", REUBICO EL CONTENEDOR "wrapper" DENTRO DE
     LA ESTRUCTURA HTML. */
     const wrapperBp = matchMedia("(min-width: 700px)")
-    const asideSection = document.getElementById("aside")
+    const asideSection = document.getElementById("aside-chat")
     const messagesContainer = document.getElementById("messages-container")
     const chatDetails = document.getElementById("chat-details")
-    const bodyContainer = document.getElementById("body")
+    const bodyContainer = document.getElementById("body-chat")
     const toggleWrapper = (breakpoint) => {
         if (breakpoint.matches)
         {

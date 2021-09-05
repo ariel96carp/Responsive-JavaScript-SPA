@@ -22,6 +22,15 @@
     }
 }
 
+// ANCHOS PARA LOGIN
+@include media-quarie(500px){
+    @for $i from 1 through 20{
+        .lo-#{$i * 5}{
+            width: #{$i * 5%};
+        }
+    }
+}
+
 // ANCHOS PARA PANTALLAS MEDIANAS
 @include media-quarie(medium){
     @for $i from 1 through 20{
