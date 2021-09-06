@@ -12,11 +12,15 @@
 .form-login{
     display: flex;
     flex-direction: column;
-    gap: .5em;
+    gap: var(--form-gap);
 
     .form-input{
         padding: .5em .75em;
         border-radius: 3px;
         border: none;
+    }
+
+    .button{
+        margin-top: var(--form-gap);
     }
 }

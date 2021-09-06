@@ -1,9 +1,5 @@
 addEventListener("DOMContentLoaded", () => {
-    
-
-
-
-    // CODIGO DEL CHAT
+    // CODIGO DEL CHAT (LAYOUT)
 
     // BOTON CON EL QUE EN PANTALLAS CHICAS, SE VISUALIZAN LOS USUARIOS CONECTADOS.
     const toggleButton = document.getElementById("main-menu-toggle")

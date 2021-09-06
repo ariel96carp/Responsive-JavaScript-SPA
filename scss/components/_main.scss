@@ -90,6 +90,7 @@
 
 // ESTILOS DEL LOGIN
 .main-login{
+    --form-gap: .5em;
     display: flex;
     justify-content: center;
     padding-top: 1em;
@@ -114,20 +115,25 @@
         }
 
         @include media-quarie(login){
-            margin-bottom: 3.5em;
             height: 4rem;
         }
     }
 
     @include media-quarie(login){
         border: 1px solid map-get($colors, primary-color);
-        height: 70%;
+        height: 80%;
         padding: 1em 1em 0;
         border-radius: 10px;
     }
 
     @media screen and (max-height: px-to-rem(400px)){
         height: 100%;
+    }
+
+    .register-button{
+        margin-top: var(--form-gap);
+        width: 100%;
+        background-color: hsl(196, 100, 39);
     }
 }
 

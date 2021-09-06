@@ -460,6 +460,7 @@ button, .button {
 }
 
 .main-login {
+  --form-gap: .5em;
   display: flex;
   justify-content: center;
   padding-top: 1em;
@@ -491,7 +492,6 @@ button, .button {
 
 @media screen and (min-width: 31.25rem) {
   .login-container img {
-    margin-bottom: 3.5em;
     height: 4rem;
   }
 }
@@ -499,7 +499,7 @@ button, .button {
 @media screen and (min-width: 31.25rem) {
   .login-container {
     border: 1px solid #666666;
-    height: 70%;
+    height: 80%;
     padding: 1em 1em 0;
     border-radius: 10px;
   }
@@ -509,6 +509,12 @@ button, .button {
   .login-container {
     height: 100%;
   }
+}
+
+.login-container .register-button {
+  margin-top: var(--form-gap);
+  width: 100%;
+  background-color: #0092c7;
 }
 
 aside {
@@ -669,13 +675,17 @@ aside .users-container.show {
 .form-login {
   display: flex;
   flex-direction: column;
-  gap: .5em;
+  gap: var(--form-gap);
 }
 
 .form-login .form-input {
   padding: .5em .75em;
   border-radius: 3px;
   border: none;
+}
+
+.form-login .button {
+  margin-top: var(--form-gap);
 }
 
 .footer-login {
