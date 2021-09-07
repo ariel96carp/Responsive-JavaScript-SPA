@@ -1,9 +1,9 @@
 .modal{
     position: fixed;
-    top: var(--aside-margin);
+    top: 0;
     left: 0;
     width: 100vw;
-    height: calc(100vh - var(--aside-margin));
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
     pointer-events: none;
     opacity: 0;
@@ -12,5 +12,18 @@
         opacity: 1;
         pointer-events: auto;
         transition: opacity .5s;
+    }
+
+    // ESTILOS DEL CHAT
+    &.chat{
+        top: var(--aside-margin);
+        height: calc(100vh - var(--aside-margin));
+    }
+
+    // ESTILOS DEL LOGIN
+    &.login{
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

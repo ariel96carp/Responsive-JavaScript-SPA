@@ -505,9 +505,10 @@ button, .button {
   }
 }
 
-@media screen and (max-height: 25rem) {
+@media screen and (max-height: 25.6875rem) {
   .login-container {
     height: 100%;
+    margin-bottom: 1rem;
   }
 }
 
@@ -663,6 +664,12 @@ aside .users-container.show {
   }
 }
 
+.form-input {
+  padding: .5em .75em;
+  border-radius: 3px;
+  border: none;
+}
+
 .message-form {
   display: flex;
   height: var(--form-height);
@@ -678,14 +685,53 @@ aside .users-container.show {
   gap: var(--form-gap);
 }
 
-.form-login .form-input {
-  padding: .5em .75em;
-  border-radius: 3px;
-  border: none;
-}
-
 .form-login .button {
   margin-top: var(--form-gap);
+}
+
+.form-container {
+  height: 80%;
+  padding: 1em 1em;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  transform: translateX(-150%);
+  box-shadow: 1px 1px 20px black;
+  border-radius: 3px;
+  color: white;
+}
+
+.form-container h2 {
+  margin-bottom: 1.5rem;
+}
+
+.form-container .register-form {
+  display: flex;
+  flex-direction: column;
+  gap: .5em;
+}
+
+.form-container .cancel-button {
+  width: 100%;
+  margin-top: .5em;
+  background-color: #e53838;
+}
+
+@media screen and (max-height: 25.6875rem) {
+  .form-container {
+    height: 100%;
+  }
+}
+
+.form-container.active {
+  transform: translateX(0);
+  transition: transform 1s;
+}
+
+.register-form .form-input {
+  background-color: transparent;
+  border-bottom: 1px solid #2463eb;
+  border-radius: 0;
+  padding: .5em 0.75em .5em 0;
+  color: white;
 }
 
 .footer-login {
@@ -737,10 +783,10 @@ aside .users-container.show {
 
 .modal {
   position: fixed;
-  top: var(--aside-margin);
+  top: 0;
   left: 0;
   width: 100vw;
-  height: calc(100vh - var(--aside-margin));
+  height: 100vh;
   background-color: rgba(0, 0, 0, 0.5);
   pointer-events: none;
   opacity: 0;
@@ -750,6 +796,17 @@ aside .users-container.show {
   opacity: 1;
   pointer-events: auto;
   transition: opacity .5s;
+}
+
+.modal.chat {
+  top: var(--aside-margin);
+  height: calc(100vh - var(--aside-margin));
+}
+
+.modal.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 body {

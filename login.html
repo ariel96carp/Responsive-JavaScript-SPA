@@ -8,16 +8,30 @@
     <title>Responsive SPA</title>
 </head>
 <body class="body-login">
+    <div class="modal login" id="modal-login">
+        <div class="form-container s-90 m-60 l-40" id="form-container">
+            <h2>Formulario de Registro</h2>
+            <form action="#" class="register-form" id="register-form">
+                <input type="text" name="name-input" class="form-input" placeholder="Nombre" required>
+                <input type="text" name="username-input" class="form-input" placeholder="Apellido" required>
+                <input type="text" name="user-input" class="form-input" placeholder="Usuario" required>
+                <input type="password" name="password-input" class="form-input" placeholder="Contraseña" required>
+                <p class="center-content">Estoy de acuerdo con Términos y Condiciones</p>
+                <input type="submit" class="button" value="Registrarse">
+            </form>
+            <button class="cancel-button" id="cancel-button">Salir</button>
+        </div>
+    </div>
     <header></header>
     <main class="main-login wrapper">
         <div class="login-container s-90 lo-70 m-50 l-30">
             <img src="img/5b557c57-8969-45ca-b880-a05441ca353b.png" class="center-block" alt="Logo de EDteam">
             <form action="#" class="form-login" id="form-login">
-                <input type="text" name="user-input" class="form-input" placeholder="Usuario">
-                <input type="password" name="password-input" class="form-input" placeholder="Contraseña">
+                <input type="text" name="user-input" class="form-input" placeholder="Usuario" required>
+                <input type="password" name="password-input" class="form-input" placeholder="Contraseña" required>
                 <input type="submit" class="button" value="Ingresar">
             </form>
-            <button class="register-button">Crear Cuenta</button>
+            <button class="register-button" id="register-button">Crear Cuenta</button>
         </div>
     </main>
     <footer class="footer-login">
@@ -47,5 +61,6 @@
             </ul>
         </div>
     </footer>
+    <script src="js/script.js"></script>
 </body>
 </html>

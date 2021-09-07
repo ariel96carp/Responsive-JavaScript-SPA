@@ -126,8 +126,9 @@
         border-radius: 10px;
     }
 
-    @media screen and (max-height: px-to-rem(400px)){
+    @media screen and (max-height: px-to-rem(411px)){
         height: 100%;
+        margin-bottom: 1rem;
     }
 
     .register-button{

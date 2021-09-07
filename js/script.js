@@ -95,5 +95,29 @@ addEventListener("DOMContentLoaded", () => {
             hideUsers(wrapperBp)
         })
     }
+
+    // CODIGO DEL LOGIN
+
+    // BOTON CON EL QUE SE ABRE EL MODAL
+    const registerButton = document.getElementById("register-button")
+    const modalLogin = document.getElementById("modal-login")
+    const formContainer = document.getElementById("form-container")
+    if (registerButton && modalLogin && formContainer)
+    {
+        registerButton.addEventListener("click", () => {
+            modalLogin.classList.toggle("active")
+            formContainer.classList.toggle("active")
+        })
+    }
+
+    // BOTON CON EL QUE SE CIERRA EL MODAL
+    const cancelButton = document.getElementById("cancel-button")
+    if (cancelButton && modalLogin && formContainer)
+    {
+        cancelButton.addEventListener("click", () => {
+            modalLogin.classList.toggle("active")
+            formContainer.classList.toggle("active")
+        })
+    }
 })
 
