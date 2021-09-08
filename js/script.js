@@ -1,6 +1,109 @@
 addEventListener("DOMContentLoaded", () => {
-    // CODIGO DEL CHAT (LAYOUT)
+    // VARIABLES DE API
+    const apiURL = "http://localhost:9393"
+    const apiRegister = `${apiURL}/api/v1/register`
+    const apiLogin = `${apiURL}/api/v1/login`
 
+    //--- CODIGO DEL LOGIN (API-REGISTRO)
+    // EVENTO CON EL QUE REALIZO EL REGISTRO DEL USUARIO
+    const registerForm = document.getElementById("register-form")
+    if (registerForm)
+    {
+        registerForm.addEventListener("submit", e => {
+            e.preventDefault()
+            const target = e.target
+            registerFetch(apiRegister,target)
+        })
+    }
+
+    // FUNCION CON LA QUE LLAMO A LA API
+    const registerFetch = async (url, target) => {
+        const statusDiv = document.getElementById("register-status")
+        const params = getParams(target)
+        const response = await fetch(url,params)
+        drawMessage("Realizando petición...",statusDiv)
+        switch(response.status)
+        {
+            case 201:
+                setTimeout(() => {
+                    drawMessage("¡Registro exitoso!","ok",statusDiv)
+                    setTimeout(() => {
+                        closeRegister(statusDiv)
+                    },1000);
+                },2000)
+                break;
+            default:
+                setTimeout(() => {
+                    drawMessage("Registro fallido","error",statusDiv)
+                    setTimeout(() => {
+                        closeRegister(statusDiv)
+                    },1000);
+                },2000)
+        }
+    }
+
+    // FUNCION CON LA QUE CREO LOS PARAMETROS DE LA LLAMADA A LA API
+    const getParams = (target) => {
+        const data = {
+            nick_name: target.username.value,
+            password: target.password.value
+        }
+        
+        const header = new Headers()
+        header.append("Content-type","application/json")
+        
+        const params = {
+            method: "POST",
+            headers: header,
+            cache: "default",
+            body: JSON.stringify(data)
+        }
+        return params
+    }
+
+    // FUNCION CON LA QUE DIBUJO MENSAJES EN EL DOM
+    const drawMessage = (...data) => {
+        let templateMessage 
+        switch(data.length)
+        {
+            case 2:
+                data[1].innerHTML = ""
+                templateMessage = `<p class="system-message center-block">
+                                            ${data[0]}
+                                        </p>`
+                data[1].insertAdjacentHTML("beforeend", templateMessage) 
+                break;
+            default:
+                data[2].innerHTML = ""
+                templateMessage = `<p class="system-message ${data[1]} center-block">
+                                            ${data[0]}
+                                        </p>`
+                data[2].insertAdjacentHTML("beforeend", templateMessage)
+        }                   
+    }
+
+    // FUNCION CON LA QUE CIERRO EL REGISTRO
+    const closeRegister = (element) => {
+        element.innerHTML = ""
+        registerForm.reset()
+        modalLogin.classList.toggle("active")
+        formContainer.classList.toggle("active")
+    }
+
+    //--- CODIGO DEL LOGIN (API-LOGIN)
+    const formLogin = document.getElementById("form-login")
+    formLogin.addEventListener("submit", e => {
+        if (formLogin)
+        {
+            e.preventDefault()
+            const target = e.target
+            
+        }
+    })
+
+
+
+    //--- CODIGO DEL CHAT (LAYOUT)
     // BOTON CON EL QUE EN PANTALLAS CHICAS, SE VISUALIZAN LOS USUARIOS CONECTADOS.
     const toggleButton = document.getElementById("main-menu-toggle")
     const usersContainer = document.getElementById("users-container")
@@ -96,8 +199,7 @@ addEventListener("DOMContentLoaded", () => {
         })
     }
 
-    // CODIGO DEL LOGIN
-
+    //--- CODIGO DEL LOGIN
     // BOTON CON EL QUE SE ABRE EL MODAL
     const registerButton = document.getElementById("register-button")
     const modalLogin = document.getElementById("modal-login")

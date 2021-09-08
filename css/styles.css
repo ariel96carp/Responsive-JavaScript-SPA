@@ -781,6 +781,24 @@ aside .users-container.show {
   }
 }
 
+.system-message {
+  --background-message: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+  background: var(--background-message);
+  padding: .5em .75em;
+  border-radius: 3px;
+  width: fit-content;
+  margin-bottom: 1rem;
+  font-family: var(--title-font);
+}
+
+.system-message.error {
+  --background-message: hsl(0, 77%, 56%);
+}
+
+.system-message.ok {
+  --background-message: hsl(126, 91%, 29%);
+}
+
 .modal {
   position: fixed;
   top: 0;

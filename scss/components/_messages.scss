@@ -1,0 +1,18 @@
+// ESTILOS DEL REGISTRO (MODAL LOGIN)
+.system-message{
+    --background-message: linear-gradient(to right, #0f0c29, #302b63, #24243e);
+    background: var(--background-message);
+    padding: .5em .75em;
+    border-radius: 3px;
+    width: fit-content;
+    margin-bottom: 1rem;
+    font-family: var(--title-font);
+
+    &.error{
+        --background-message: hsl(0, 77%, 56%);
+    }
+
+    &.ok{
+        --background-message: hsl(126, 91%, 29%);
+    }
+}
