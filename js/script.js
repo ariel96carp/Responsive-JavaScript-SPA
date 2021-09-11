@@ -118,16 +118,16 @@ addEventListener("DOMContentLoaded", () => {
         {
             case 2:
                 data[1].innerHTML = ""
-                templateMessage = `<p class="system-message center-block center-content">
-                                            ${data[0]}
-                                        </p>`
+                templateMessage =  `<p class="system-message center-block center-content">
+                                        ${data[0]}
+                                   </p>`
                 data[1].insertAdjacentHTML("beforeend", templateMessage) 
                 break;
             default:
                 data[2].innerHTML = ""
                 templateMessage = `<p class="system-message ${data[1]} center-block center-content">
-                                            ${data[0]}
-                                        </p>`
+                                        ${data[0]}
+                                  </p>`
                 data[2].insertAdjacentHTML("beforeend", templateMessage)
         }                   
     }
