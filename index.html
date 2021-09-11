@@ -14,33 +14,17 @@
             <div class="aside-chat wrapper" id="aside-chat">
                 <img src="img/5b557c57-8969-45ca-b880-a05441ca353b.png" alt="Logo de EDteam">
                 <div class="main-menu-toggle" id="main-menu-toggle"></div>
-                <a href="#" class="button center-content">Cerrar sesión</a>
+                <a href="#" class="button center-content" id="wsButton">Cerrar sesión</a>
                 <div class="modal chat" id="modal"></div>
                 <div class="users-container" id="users-container">
                     <h3 class="center-content">Usuarios conectados</h2>
-                    <div class="users">
+                    <div class="users" id="users">
                         <div class="user title">
                             <div class="user-name">
                                 <p>Dante Carrasco</p>
                             </div>
                             <div class="user-status">
-                                <p>En línea</p>
-                            </div>
-                        </div>
-                        <div class="user title">
-                            <div class="user-name">
-                                <p>Dante Carrasco</p>
-                            </div>
-                            <div class="user-status">
-                                <p>En línea</p>
-                            </div>
-                        </div>
-                        <div class="user title">
-                            <div class="user-name">
-                                <p>Dante Carrasco</p>
-                            </div>
-                            <div class="user-status">
-                                <p>En línea</p>
+                                <p>Desconectado</p>
                             </div>
                         </div>
                     </div>
@@ -57,45 +41,9 @@
                 </div>
             </div>
             <div class="messages-container wrapper" id="messages-container">
-                <div class="message">
-                    <img src="img/perfil.svg" alt="Avatar de usuario">
-                    <div class="message-info">
-                        <div class="user-info">
-                            <p class="user-name">Dante Carrasco</p>
-                            <p class="user-time">17:58</p>
-                        </div>
-                        <div class="content">
-                            <p>¡Hola! ¿Cómo estás?sdddddddddddddasasdsad sds</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="message">
-                    <img src="img/perfil.svg" alt="Avatar de usuario">
-                    <div class="message-info">
-                        <div class="user-info">
-                            <p class="user-name">Dante Carrasco</p>
-                            <p class="user-time">17:58</p>
-                        </div>
-                        <div class="content">
-                            <p>¡Hola! ¿Cómo estás?</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="message">
-                    <img src="img/perfil.svg" alt="Avatar de usuario">
-                    <div class="message-info">
-                        <div class="user-info">
-                            <p class="user-name">Dante Carrasco</p>
-                            <p class="user-time">17:58</p>
-                        </div>
-                        <div class="content">
-                            <p>¡Hola! ¿Cómo estás?</p>
-                        </div>
-                    </div>
-                </div>  
             </div>
-            <form action="#" class="message-form">
-                <input type="text" class="message" name="" placeholder="Ingrese su mensaje">
+            <form action="#" class="message-form" id="message-form">
+                <input type="text" class="message" name="userMessage" placeholder="Ingrese su mensaje">
                 <input type="submit" class="button" value="Enviar">
             </form>
         </main>

@@ -38,13 +38,13 @@
 .messages-container{
     padding: 1em 0;
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    flex-direction: column-reverse;
     gap: .75rem;
     height: calc(100% - (var(--details-height) + var(--form-height)));
     min-height: px-to-rem(200px);
     max-height: calc((var(--screen-height) - var(--aside-margin)) - (var(--details-height) + var(--form-height)));
     overflow-y: scroll;
+    overflow-wrap: anywhere;
 
     @include media-quarie(wrapper){
         max-height: calc(var(--screen-height) - (var(--details-height) + var(--form-height)));
@@ -74,7 +74,6 @@
 
 .message-info{
     align-self: flex-start;
-    max-width: calc(100% - (var(--image-width) + var(--message-gap)));
 
     .user-info{
         margin-bottom: .25rem;
