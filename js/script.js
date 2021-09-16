@@ -368,7 +368,7 @@ const chatCode = () => {
     // FUNCION CON LA QUE LLAMO A LA API DE "GIPHY".
     const apiGif = async (gif) => {
         const apiKey = "Evm4Fr299dWNZirqufivprkQwl0B4KsW"
-        const gyphyURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${gif}&limit=15`
+        const gyphyURL = `https://api.giphy.com/v1/gifs/search?api_key=${apiKey}&q=${gif}&limit=1`
         const header = new Headers()
         header.append("Content-type", "application/json")
         const params = {
