@@ -49,6 +49,7 @@
   margin: 0 var(--margin);
   width: calc(100% - calc(var(--margin) * 2));
   max-width: 75rem;
+  min-width: 18rem;
 }
 
 @media screen and (min-width: 64rem) {
